@@ -5,6 +5,10 @@ const bitfinexBaseURL = "https://api-pub.bitfinex.com/v2/";
 
 const binanceClient = axios.create({
     baseURL: binanceBaseUrl,
+    headers: {
+        'X-MBX-APIKEY': process.env.API_KEY,
+        'Content-Type': 'application/json'
+    },
     timeout: 5000,
 });
 
