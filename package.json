@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
+  "type": "module",
   "description": "Portfolio tracking",
   "main": "src/index.js",
   "scripts": {

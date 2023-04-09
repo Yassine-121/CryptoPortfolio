@@ -1,4 +1,8 @@
 import crypto from "crypto";
+import dotenv from 'dotenv';
+dotenv.config();
 
-export const signature = crypto.createHmac('sha256', process.env.API_SECRET);
+export function generateSignature(queryString) {
+    return crypto.createHmac('sha256', process.env.API_SECRET).update(queryString).digest('hex');
+}
 export const timestamp = Date.now();

@@ -1,12 +1,8 @@
-import apiClient from "../../../apiClient";
-import {signature, timestamp} from "../../../../utils/utils";
+import apiClient from "../../../apiClient.js";
+import {generateSignature, timestamp} from "../../../../utils/utils.js";
 
-function getAllTrades(symbol) {
-    return apiClient.binanceClient.get('/myTrades?symbol='+symbol+
-                                            '&timestamp='+timestamp+
-                                            '&signature='+signature);
-}
-
-export default {
-    getAllTrades
+export function getAllTrades(symbol) {
+    const queryString = 'symbol=' + symbol + '&timestamp=' + timestamp;
+    const signature = generateSignature(queryString);
+    return apiClient.binanceClient.get('/myTrades?'+queryString+'&signature='+signature);
 }
