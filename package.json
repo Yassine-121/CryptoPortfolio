@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio tracking",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "Cryptocurrency",
+    "Crypto"
+  ],
+  "author": "YassineAMG",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.3.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3"
+  }
+}
